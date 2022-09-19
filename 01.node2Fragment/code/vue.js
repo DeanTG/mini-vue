@@ -1,15 +1,14 @@
 class Compile {
   constructor(el) {
     this.$el = this.isElementNode(el) ? el : document.querySelector(el)
-
     // 提取节点
     const fragment = this.node2Fragment(this.$el)
     // 节点编译
     this.compile(fragment)
     this.$el.appendChild(fragment)
-
   }
   compile(fragment) {
+    console.log(fragment)
     const childNodes = [...fragment.childNodes]
     childNodes.forEach(node => {
       if(this.isElementNode(node)) {
@@ -18,7 +17,7 @@ class Compile {
         // textNode
       }
 
-      if(node.childNodes&& node.childNodes.length) {
+      if(node && node.childNodes && node.childNodes.length) {
         this.compile(node)
       }
     })
@@ -35,7 +34,7 @@ class Compile {
       newFragment.appendChild(firstChild)
     }
 
-    return firstChild
+    return newFragment
   }
   isElementNode(node) {
     // 1: ELEMENT_NODE
@@ -46,7 +45,7 @@ class Compile {
 class MVue {
   constructor(options) {
     if(options.el) {
-      new Compile(this.$el)
+      new Compile(options.el)
     }
   }
 }
