@@ -23,7 +23,7 @@ class Compile {
     })
 
   }
-  // 使用DocumentFragment能解决直接操作DOM引发大量回流的问题
+  // 使用DocumentFragment能解决直接操作DOM（appendchild）引发大量回流的问题
   node2Fragment(el) {
     // 创建文档碎片
     const newFragment = document.createDocumentFragment()
@@ -44,8 +44,11 @@ class Compile {
 
 class MVue {
   constructor(options) {
+    this.$options = options
+    this.$data = options.data || {}
+    this.$methods = options.methods || {}
     if(options.el) {
-      new Compile(options.el)
+      new Compile(options.el, this)
     }
   }
 }

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="renderer" content="webkit">
+  </head>
+  <body>
+    <div id="app">
+      <h1>vue 从0到1</h1>
+      <p>{{person.name}} -- {{person.sex}}</p>
+      <ul>
+        <li>1</li>
+        <li>2</li>
+      </ul>
+      <input type="text" v-model="input">
+      <h5 v-text="person.name"></h5>
+      <h6 v-text="msg"></h6>
+      <div v-html="htmlText"></div>
+      <img v-bind:src="img" width="100" height="100" alt="">
+      <button v-on:click="handleClick">btn on</button>
+      <button @click="handleClick">btn @</button>
+    </div>
+    <script type="text/javascript" src="./vue.js"></script>
+    <script>
+      let vm = new MVue({
+        el: '#app',
+        data: {
+          person: {
+            name: 'dean',
+            sex: '男'
+          },
+          msg: '测试',
+          input: 'vmodel',
+          htmlText: '<h2>html text</h2>',
+          img: 'https://v2.cn.vuejs.org/images/logo.svg'
+        },
+        methods: {
+          handleClick() {
+            console.log(this)
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
