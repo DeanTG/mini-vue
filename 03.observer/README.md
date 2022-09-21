@@ -21,7 +21,7 @@
         set: (newVal) => {
           this.observer(newVal)
           if(newVal !== value) {
-            data[key] = newVal          
+           value = newVal
           }
         }
       })

@@ -8,6 +8,7 @@ class Observer {
     })
   }
   defineRective(data, key, value) {
+    console.log(data, key, value)
     Object.defineProperty(data, key, {
       enumerable: true,
       configurable: false,
@@ -17,7 +18,7 @@ class Observer {
       set: (newVal) => {
         this.observer(newVal)
         if(newVal !== value) {
-          data[key] = newVal          
+          value = newVal
         }
       }
     })
