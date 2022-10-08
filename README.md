@@ -17,3 +17,4 @@
 
 ## tips
 * [剖析Vue实现原理](https://github.com/DMQ/mvvm)
+* [Vue.js 技术揭秘](https://ustbhuangyi.github.io/vue-analysis/v2/reactive/getters.html#dep)
