@@ -9,6 +9,7 @@
 ### [初始化处理挂载节点el](./01.node2Fragment)
 ### [处理节点compile](./02.compile)
 ### [劫持监听属性observer](./03.observer)
+### [实现观察者Watcher和依赖收集器Dep](./04.Watcher&Dep)
 
 
 ## tips

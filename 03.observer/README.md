@@ -12,6 +12,8 @@
       })
     }
     defineRective(data, key, value) {
+      // 递归遍历
+      this.observer(value)
       Object.defineProperty(data, key, {
         enumerable: true,
         configurable: false,
